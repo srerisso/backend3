@@ -60,3 +60,4 @@ gem 'kaminari'
 
 # Admin Panel template.
 gem 'trestle'
+gem 'trestle-search'

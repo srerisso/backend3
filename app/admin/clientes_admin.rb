@@ -1,6 +1,6 @@
-Trestle.resource(:proyectos) do
+Trestle.resource(:clientes) do
   menu do
-    item :proyectos, icon: "fa fa-book"
+    item :clientes, icon: "fa fa-people"
   end
 
   # Customize the table columns shown on the index view.
@@ -13,7 +13,7 @@ Trestle.resource(:proyectos) do
 
   # Customize the form fields shown on the new/edit views.
   #
-  # form do |proyecto|
+  # form do |cliente|
   #   text_field :name
   #
   #   row do
@@ -30,15 +30,6 @@ Trestle.resource(:proyectos) do
   #   http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters
   #
   # params do |params|
-  #   params.require(:proyecto).permit(:name, ...)
+  #   params.require(:cliente).permit(:name, ...)
   # end
-
-  search do |query|
-    if query
-      Proyecto.where("Referencia ILIKE ?", "%#{query}%")
-    else
-      Proyecto.all
-    end
-  end
-
 end
