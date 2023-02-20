@@ -5,17 +5,19 @@
 <table>
   <thead>
     <tr>
-        <th colspan="2"></th>
-    </tr>
-    <tr>
-      <th colspan="3"></th>
+        <td>Código</td>
+        <td>Referencia</td>
+        <td>Cliente</td>
+        <td colspan="3">Acciones</td>
     </tr>
   </thead>
 
   <tbody>
     <% @proyectos.each do |proyecto| %>
       <tr>
-        <td><%= proyecto.Codigo_Alg %> - <%= proyecto.Referencia %></td>
+        <td><%= proyecto.Codigo_Alg %></td>
+        <td><%= proyecto.Referencia %></td>
+        <td><%= proyecto.cliente %></td>
         <td><%= link_to 'Show', proyecto %></td>
         <td><%= link_to 'Edit', edit_proyecto_path(proyecto) %></td>
         <td><%= link_to 'Destroy', proyecto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
