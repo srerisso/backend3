@@ -3,24 +3,33 @@ Trestle.resource(:proyectos) do
     item :proyectos, icon: "fa fa-book"
   end
 
-  # Customize the table columns shown on the index view.
-  #
-  # table do
-  #   column :name
-  #   column :created_at, align: :center
-  #   actions
+  # collection do
+  #   Proyecto.order(created_at: :desc)
   # end
 
-  # Customize the form fields shown on the new/edit views.
-  #
-  # form do |proyecto|
-  #   text_field :name
-  #
-  #   row do
-  #     col { datetime_field :updated_at }
-  #     col { datetime_field :created_at }
-  #   end
-  # end
+  # Customize the table columns shown on the index view.  
+  table do
+    column :Referencia
+    column :Codigo_Alg
+    column :Estado
+    column :cliente_id
+    column :created_at, header: "Created "
+    actions
+  end
+
+  # Customize the form fields shown on the new/edit views. 
+  form do |proyecto|
+    tab :proyecto do
+      text_field :Codigo_Alg
+      text_field :Referencia
+      text_field :cliente_id#Nombre
+      row do
+        col { datetime_field :updated_at }
+        col { datetime_field :created_at }
+      end 
+    end
+
+  end
 
   # By default, all parameters passed to the update and create actions will be
   # permitted. If you do not have full trust in your users, you should explicitly
