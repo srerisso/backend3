@@ -55,7 +55,7 @@ Trestle.resource(:clientes) do
 
   search do |query|
     if query
-      Cliente.where("clientes.Nombre ILIKE ?", "%#{query}%")
+      Cliente.where("'clientes.Nombre' ILIKE ?", "%#{query}%")
     else
       Cliente.all
     end

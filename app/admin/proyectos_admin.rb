@@ -13,7 +13,7 @@ Trestle.resource(:proyectos) do
     column :Codigo_Alg
     column :Estado
     column :cliente_id
-    column :created_at, header: "Created "
+    column :created_at, header: "Created ", sort: { default: true, default_order: :desc }
     actions
   end
 
@@ -44,7 +44,7 @@ Trestle.resource(:proyectos) do
 
   search do |query|
     if query
-      Proyecto.where("Referencia ILIKE ?", "%#{query}%")
+      Proyecto.where("'proyectos.Referencia' ILIKE ?", "%#{query}%")
     else
       Proyecto.all
     end

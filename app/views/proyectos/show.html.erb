@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @proyecto.Referencia %></h1>
+<h1><%= @proyecto.Codigo_Alg %></h1>
 
+<h2>Detalles del proyecto</h2>
+
+<p><label for="notice">Referencia : <%= @proyecto.Referencia %></p>
+<p>Cliente :  <%= @proyecto.cliente.Nombre %></p>
+<p>Estado :  <%= @proyecto.Estado %></p>
+
+
+<h2>Chagelog</h2>
+
+<h2>Cálculos</h2>
+
+
+<%= link_to 'Back', proyectos_path %>
