@@ -59,5 +59,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'kaminari'
 
 # Admin Panel template.
-gem 'trestle'
-gem 'trestle-search'
+

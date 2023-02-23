@@ -17,7 +17,8 @@
       <tr>
         <td><%= proyecto.Codigo_Alg %></td>
         <td><%= proyecto.Referencia %></td>
-        <td><%= proyecto.cliente_id %></td>
+        <td><%= proyecto.Estado %></td>
+        <td><%= proyecto.cliente.Nombre %></td>
         <td><%= link_to 'Show', proyecto %></td>
         <td><%= link_to 'Edit', edit_proyecto_path(proyecto) %></td>
         <td><%= link_to 'Destroy', proyecto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
