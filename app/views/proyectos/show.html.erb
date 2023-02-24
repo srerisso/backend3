@@ -8,18 +8,23 @@
 <p>Cliente :  <%= @proyecto.cliente.Nombre %></p>
 <p>Estado :  <%= @proyecto.Estado %></p>
 
-<% 
-    calculos, changelogs = []
-%>
-<% @proyecto.components.each do |component| %>
-   <% if component.component_type == "components_cambios_changelog_proyectos" %>
-        <%= comp.id %>
-   <% end %>
-<% end %>
+<table>
+<thead>
+    <tr>
+        <td>Component Id</td>
+        <td>Field</td>
+        <td>Proyecto_id</td>
+    </tr>
+</thead>
+<table>
+    <% @proyecto.components.each do |comp| %>
+        <tr>
+            <td><%= comp.component_id %></td>
+            <td><%= comp.field %></td>
+            <td><%= comp.proyecto_id %></td>
+        </tr>
+    <% end %>
+</table>
 
-<h2>Chagelog</h2>
-<%# <%= changelogs %> %>
-<h2>Cálculos</h2>
-<%# <%= calculos %> %>
 
 <%= link_to 'Back', proyectos_path %>
