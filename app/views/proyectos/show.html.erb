@@ -20,7 +20,7 @@
 <table>
     <% @proyecto.components.each do |comp| %>
         <tr>
-            <td><%= comp.component_id %></td>
+            <td><%= link_to comp.component_id, component_path(comp) %></td>
             <td><%= comp.field %></td>
             <td><%= comp.proyecto_id %></td>
         </tr>
