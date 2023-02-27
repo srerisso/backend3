@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  # root 'pages#index'
+  get 'components/home'
+  get 'components/index'
+  get 'component/home'
+  get 'component/index'
+  root 'pages#index'
 
-  resources :clientes, :proyectos
+  resources :clientes, :proyectos, :components
 end

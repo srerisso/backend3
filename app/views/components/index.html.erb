@@ -1,0 +1,38 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Components</h1>
+
+<table>
+  <thead>
+    <tr>
+        <td>Id</td>
+        <td>Field</td>
+        <td>Order</td>
+        <td>Type</td>
+        <td>Component_id</td>
+        <td colspan="3">Acciones</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @components.each do |component| %>
+      <tr>
+        <td><%= component.id %></td>
+        <td><%= component.field %></td>
+        <td><%= component.order %></td>
+        <td><%= component.component_type %></td>
+        <td><%= component.component_id %></td>
+        <td><%= link_to 'Show', component %></td>
+        <td><%= link_to 'Edit', edit_component_path(component) %></td>
+        <td><%= link_to 'Destroy', component, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @components %>
+
+<br>
+
+<%= link_to 'New component', new_component_path %>

@@ -3,4 +3,5 @@ class Component < ApplicationRecord
     has_many :calculos
     
     self.table_name = 'proyectos_components'
+    paginates_per 20
 end
