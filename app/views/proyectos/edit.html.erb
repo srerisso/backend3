@@ -1,0 +1,9 @@
+<h1>Edit proyecto</h1>
+
+<%= form_with model: @proyecto, url: proyecto_path(@proyecto), method: :patch, local: true do |p| %>
+
+    <%= p.text_field :Referencia %>
+
+    <%= p.submit %>
+
+<% end %>
