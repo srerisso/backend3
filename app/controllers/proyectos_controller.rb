@@ -2,10 +2,6 @@ class ProyectosController < ApplicationController
 
     def index
         @proyectos = Proyecto.all().order(created_at: :desc).page params[:page]
-        # @proyectos = Proyecto.all().order(created_at: :desc)
-        # @proyectos.each do |proyecto|
-        #     @cliente_nombre = proyecto.cliente.Nombre
-        # end
     end
 
     def show
