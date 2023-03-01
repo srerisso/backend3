@@ -1,5 +1,5 @@
 class Calculo < ApplicationRecord
-    belongs_to :component
+    belongs_to :proyecto
     
-    self.table_name = "components_cambios_calculo_presupuestos"
+    self.table_name = "calculos"
 end

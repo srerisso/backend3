@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   get 'component/index'
   root 'pages#index'
 
-  resources :clientes, :proyectos, :components, :chagelogs, :calculos
+  resources :clientes, :proyectos, :chagelogs, :calculos
 end

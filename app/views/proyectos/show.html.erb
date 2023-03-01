@@ -10,22 +10,42 @@
 
 <h2>Actividad del proyecto</h2>
 <table>
-<thead>
-    <tr>
-        <td>Component Id</td>
-        <td>Field</td>
-        <td>Proyecto_id</td>
-    </tr>
-</thead>
-<table>
-    <% @proyecto.components.each do |comp| %>
+    <thead>
         <tr>
-            <td><%= link_to comp.component_id, component_path(comp) %></td>
-            <td><%= comp.field %></td>
-            <td><%= comp.proyecto_id %></td>
+            <td>Field</td>
+            <td>Proyecto_id</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% @proyecto.changelogs.each do |chng| %>
+        <tr>
+            <td><%= chng.Fecha %></td>
+            <td><%= chng.Descripcion %></td>                
         </tr>
     <% end %>
+    </tbody>
 </table>
+
+<h2>Cálculos del proyecto</h2>
+<table>
+    <thead>
+        <tr>
+            <td>Fecha</td>
+            <td>Importe Total (Neto)</td>
+            <td>Observaciones</td>
+        </tr>
+    </thead>
+    <tbody>
+    <% @proyecto.calculos.each do |calc| %>
+        <tr>
+            <td><%= calc.fecha_calculo %></td>
+            <td><%= calc.importe_total_neto %></td>            
+            <td><%= calc.observaciones %></td>                
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
 
 
 <%= link_to 'Back', proyectos_path %>

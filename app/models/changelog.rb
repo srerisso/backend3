@@ -1,5 +1,4 @@
 class Changelog < ApplicationRecord
-    belongs_to :component
+    belongs_to :proyecto
 
-    self.table_name = "components_cambios_changelog_proyectos"
 end
