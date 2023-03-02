@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :proyectos
   resources :clientes
   resources :calculos
   get 'components/home'

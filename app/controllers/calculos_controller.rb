@@ -3,7 +3,7 @@ class CalculosController < ApplicationController
 
   # GET /calculos or /calculos.json
   def index
-    @calculos = Calculo.all
+    @calculos = Calculo.order(proyecto_id: :desc).page params[:page]
   end
 
   # GET /calculos/1 or /calculos/1.json

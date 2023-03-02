@@ -1,35 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
 
-<h1 class="text-xl">Proyectos</h1>
+  <div class="flex justify-between items-center py-5">
+    <h1 class="font-bold text-xl">Proyectos</h1>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-        <td>Código</td>
-        <td>Referencia</td>
-        <td>Estado</td>
-        <td>Cliente</td>
-        <td colspan="3">Acciones</td>
-    </tr>
-  </thead>
+  <%# Results table %>
+  <div id="proyectos" class="min-w-full">
+    <table class="table-auto">
+      <%= render @proyectos %>
+    </table>
+  </div>
 
-  <tbody>
-    <% @proyectos.each do |proyecto| %>
-      <tr>
-        <td><%= proyecto.Codigo_Alg %></td>
-        <td><%= proyecto.Referencia %></td>
-        <td><%= proyecto.Estado %></td>
-        <td><%= proyecto.cliente.Nombre %></td>
-        <td><%= link_to 'Show', proyecto %></td>
-        <td><%= link_to 'Edit', edit_proyecto_path(proyecto) %></td>
-        <td><%= link_to 'Destroy', proyecto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%= paginate @proyectos %>
 
-<%= paginate @proyectos %>
+  <%= link_to 'New proyecto', new_proyecto_path, class: "rounded py-3 px-5 bg-blue-600 block font-medium" %>
 
-<br>
-
-<%= link_to 'New proyecto', new_proyecto_path %>
+</div>

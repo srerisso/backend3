@@ -1,7 +1,5 @@
 class Proyecto < ApplicationRecord
-    belongs_to :cliente
-    has_many :changelogs
-    has_many :calculos
+  belongs_to :cliente
 
-    paginates_per 20
+  paginates_per 20
 end

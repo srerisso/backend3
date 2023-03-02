@@ -1,51 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="text-xl"><%= @proyecto.Codigo_Alg %></h1>
-
-<h2 class="text-lg">Detalles del proyecto</h2>
-
-<p><label for="notice">Referencia : <%= @proyecto.Referencia %></p>
-<p>Cliente :  <%= @proyecto.cliente.Nombre %></p>
-<p>Estado :  <%= @proyecto.Estado %></p>
-
-<h2 class="text-lg">Actividad del proyecto</h2>
-<table>
-    <thead>
-        <tr>
-            <td>Field</td>
-            <td>Proyecto_id</td>
-        </tr>
-    </thead>
-    <tbody>
-    <% @proyecto.changelogs.each do |chng| %>
-        <tr>
-            <td><%= chng.Fecha %></td>
-            <td><%= chng.Descripcion %></td>                
-        </tr>
+<div class="mx-auto md:w-2/3 w-full flex">
+  <div class="mx-auto">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
-    </tbody>
-</table>
 
-<h2 class="text-lg">Cálculos del proyecto</h2>
-<table>
-    <thead>
-        <tr>
-            <td>Fecha</td>
-            <td>Importe Total (Neto)</td>
-            <td>Observaciones</td>
-        </tr>
-    </thead>
-    <tbody>
-    <% @proyecto.calculos.each do |calc| %>
-        <tr>
-            <td><%= calc.fecha_calculo %></td>
-            <td><%= calc.importe_total_neto %></td>            
-            <td><%= calc.observaciones %></td>                
-        </tr>
-    <% end %>
-    </tbody>
-</table>
+    <%= render @proyecto %>
 
-
-
-<%= link_to 'Back', proyectos_path, class: "" %>
+    <%= link_to 'Edit this proyecto', edit_proyecto_path(@proyecto), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="inline-block ml-2">
+      <%= button_to 'Destroy this proyecto', proyecto_path(@proyecto), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    <%= link_to 'Back to proyectos', proyectos_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>

@@ -16,7 +16,11 @@
   <!-- Navigation -->
     <%= render "shared/menu" %>
 
-    <%= yield %>
+    <!-- Scrollable Content -->
+    <div class="flex flex-wrap" style="width: 1000px;">
+      <%= yield %>    
+    </div>
+    
 
   </body>
 </html>
