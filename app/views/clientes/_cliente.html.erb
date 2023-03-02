@@ -1,0 +1,77 @@
+<div id="<%= dom_id cliente %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nombre:</strong>
+    <%= cliente.Nombre %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Email:</strong>
+    <%= cliente.Email %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Localidad:</strong>
+    <%= cliente.Localidad %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Codigopostal:</strong>
+    <%= cliente.CodigoPostal %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Direccion:</strong>
+    <%= cliente.Direccion %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Coordenadas:</strong>
+    <%= cliente.Coordenadas %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Published at:</strong>
+    <%= cliente.published_at %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Created by:</strong>
+    <%= cliente.created_by %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Updated by:</strong>
+    <%= cliente.updated_by %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Provincia:</strong>
+    <%= cliente.Provincia %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Latitude:</strong>
+    <%= cliente.Latitude %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Longitud:</strong>
+    <%= cliente.Longitud %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Razonsocial:</strong>
+    <%= cliente.RazonSocial %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Cliente:</strong>
+    <%= cliente.Cliente_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this cliente", cliente, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this cliente', edit_cliente_path(cliente), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

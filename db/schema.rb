@@ -82,6 +82,25 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["user_id"], name: "admin_users_roles_links_fk"
   end
 
+  create_table "calculos", id: :integer, default: nil, force: :cascade do |t|
+    t.integer "proyecto_id"
+    t.string "acabado", limit: 255
+    t.float "descuento", default: 0.0
+    t.float "importe_perfiles", default: 0.0
+    t.float "importe_accesorios", default: 0.0
+    t.float "importe_total_neto", default: 0.0
+    t.text "observaciones"
+    t.datetime "fecha_calculo"
+    t.string "carpinteria", limit: 255
+  end
+
+  create_table "changelogs", id: false, force: :cascade do |t|
+    t.datetime "Fecha"
+    t.string "Descripcion", limit: 255
+    t.integer "proyecto_id", null: false
+    t.integer "id", null: false
+  end
+
   create_table "clientes", id: :serial, force: :cascade do |t|
     t.string "Nombre", limit: 255
     t.string "Email", limit: 255
@@ -98,7 +117,13 @@ ActiveRecord::Schema.define(version: 0) do
     t.float "Latitude"
     t.float "Longitud"
     t.string "RazonSocial", limit: 255
+    t.bigint "Cliente_id"
     t.index ["Nombre"], name: "clientes_Nombre_unique", unique: true
+  end
+
+  create_table "clientes__proyectos", id: :serial, force: :cascade do |t|
+    t.integer "cliente_id"
+    t.integer "proyecto_id"
   end
 
   create_table "clientes_proyectos__proyectos_clientes", id: :serial, force: :cascade do |t|
@@ -293,7 +318,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "proyectos", id: :serial, force: :cascade do |t|
     t.string "Referencia", limit: 255
-    t.integer "cliente"
+    t.integer "cliente_id"
     t.datetime "published_at"
     t.integer "created_by"
     t.integer "updated_by"
@@ -301,6 +326,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }
     t.string "Codigo_Alg", limit: 255
     t.string "Estado", limit: 255
+    t.integer "cliente"
   end
 
   create_table "proyectos_components", id: :serial, force: :cascade do |t|
@@ -543,6 +569,8 @@ ActiveRecord::Schema.define(version: 0) do
   add_foreign_key "admin_users", "admin_users", column: "updated_by_id", name: "admin_users_updated_by_id_fk", on_delete: :nullify
   add_foreign_key "admin_users_roles_links", "admin_roles", column: "role_id", name: "admin_users_roles_links_inv_fk", on_delete: :cascade
   add_foreign_key "admin_users_roles_links", "admin_users", column: "user_id", name: "admin_users_roles_links_fk", on_delete: :cascade
+  add_foreign_key "calculos", "proyectos", name: "fk"
+  add_foreign_key "changelogs", "proyectos", name: "changelogs_proyectos_fkey"
   add_foreign_key "components_cambios_calculo_presupuestos_components", "components_cambios_calculo_presupuestos", name: "components_cambios_calculo_presupuesto_id_fk", on_delete: :cascade
   add_foreign_key "files", "admin_users", column: "created_by_id", name: "files_created_by_id_fk", on_delete: :nullify
   add_foreign_key "files", "admin_users", column: "updated_by_id", name: "files_updated_by_id_fk", on_delete: :nullify

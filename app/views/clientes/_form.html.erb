@@ -1,6 +1,6 @@
-<%= form_with(model: cliente) do |form| %>
+<%= form_with(model: cliente, class: "contents") do |form| %>
   <% if cliente.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
 
       <ul>
@@ -11,7 +11,77 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="my-5">
+    <%= form.label :Nombre %>
+    <%= form.text_field :Nombre, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Email %>
+    <%= form.text_field :Email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Localidad %>
+    <%= form.text_field :Localidad, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :CodigoPostal %>
+    <%= form.text_field :CodigoPostal, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Direccion %>
+    <%= form.text_area :Direccion, rows: 4, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Coordenadas %>
+    <%= form.text_field :Coordenadas, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :published_at %>
+    <%= form.datetime_select :published_at, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :created_by %>
+    <%= form.number_field :created_by, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :updated_by %>
+    <%= form.number_field :updated_by, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Provincia %>
+    <%= form.text_field :Provincia, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Latitude %>
+    <%= form.text_field :Latitude, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Longitud %>
+    <%= form.text_field :Longitud, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :RazonSocial %>
+    <%= form.text_field :RazonSocial, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :Cliente_id %>
+    <%= form.text_field :Cliente_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

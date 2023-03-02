@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @proyecto.Codigo_Alg %></h1>
+<h1 class="text-xl"><%= @proyecto.Codigo_Alg %></h1>
 
-<h2>Detalles del proyecto</h2>
+<h2 class="text-lg">Detalles del proyecto</h2>
 
 <p><label for="notice">Referencia : <%= @proyecto.Referencia %></p>
 <p>Cliente :  <%= @proyecto.cliente.Nombre %></p>
 <p>Estado :  <%= @proyecto.Estado %></p>
 
-<h2>Actividad del proyecto</h2>
+<h2 class="text-lg">Actividad del proyecto</h2>
 <table>
     <thead>
         <tr>
@@ -26,7 +26,7 @@
     </tbody>
 </table>
 
-<h2>Cálculos del proyecto</h2>
+<h2 class="text-lg">Cálculos del proyecto</h2>
 <table>
     <thead>
         <tr>
@@ -48,4 +48,4 @@
 
 
 
-<%= link_to 'Back', proyectos_path %>
+<%= link_to 'Back', proyectos_path, class: "" %>

@@ -1,4 +1,3 @@
 class Cliente < ApplicationRecord
-    has_many :proyectos
-    paginates_per 20
+  belongs_to :Cliente
 end

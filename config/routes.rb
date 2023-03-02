@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :clientes
+  resources :calculos
   get 'components/home'
   get 'components/index'
   get 'component/home'

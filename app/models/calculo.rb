@@ -1,5 +1,3 @@
 class Calculo < ApplicationRecord
-    belongs_to :proyecto
-    
-    self.table_name = "calculos"
+  belongs_to :proyecto
 end
