@@ -60,3 +60,5 @@ gem 'kaminari'
 
 # Admin Panel template.
 
+
+gem "tailwindcss-rails", "~> 2.0"
