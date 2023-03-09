@@ -58,7 +58,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Pagination.
 gem 'kaminari'
 
-# Admin Panel template.
-
-
+# CSS
 gem "tailwindcss-rails", "~> 2.0"
+
+# i18n
+gem 'i18n', '~> 1.12'
