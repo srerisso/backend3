@@ -5,16 +5,25 @@
 
   <div class="flex justify-between items-center py-5">
     <h1 class="font-bold text-xl">Proyectos</h1>
-    <%# <%= link_to 'New proyecto', new_proyecto_path, class: "rounded py-3 px-5 bg-blue-600 block font-medium text-white" %> %>
-    <%= link_to 'New proyecto', new_proyecto_path, class: "rounded-lg py-3 px-5 bg-green-300 inline-block font-medium" %>
+      <%= link_to 'New proyecto', new_proyecto_path, class: "rounded-lg py-3 px-5 bg-green-300 inline-block font-medium" %>
   </div>
 
   <%# Results table %>
-  <div id="proyectos" class="min-w-full">
-    <table class="table-auto">
+  <%# <%# <div id="proyectos" class="min-w-full"> %>
+  <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+    <thead class="bg-gray-50">
+      <tr>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900">ALG</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Referencia</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Cliente</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Fecha Alta</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Estado</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Acciones</th>
+      </tr>
+    </thead>
       <%= render @proyectos %>
-    </table>
-  </div>
+  </table>
+  <%# </div> %>
 
   <%= paginate @proyectos %>
 
