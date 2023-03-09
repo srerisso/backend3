@@ -25,19 +25,8 @@
     <%= link_to 'Back to proyectos', proyectos_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
 
     <hr>
-    
+
     <h1>Cálculos</h1>
-    <table>
-      <thead class="bg-gray-50">
-        <tr>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">ALG</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Referencia</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Cliente</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Fecha Alta</th>
-          <th scope="col" class="px-6 py-4 font-medium text-gray-900">Estado</th>
-        </tr>
-      </thead>
-        <%= render @proyecto.calculos %>
-    </table>
+      <%= render @proyecto.calculos %>
   </div>
 </div>
