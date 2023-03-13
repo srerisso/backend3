@@ -23,10 +23,12 @@
       <%= button_to 'Destroy this proyecto', proyecto_path(@proyecto), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to 'Back to proyectos', proyectos_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    
+    <br />
+    <hr class="py-4">
 
-    <hr>
+    <h1 class="py-4 font-medium text-gray-900">Cálculos</h1>
+    <%= render @proyecto.calculos %>
 
-    <h1>Cálculos</h1>
-      <%= render @proyecto.calculos %>
   </div>
 </div>
