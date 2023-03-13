@@ -17,6 +17,7 @@ class ProyectosController < ApplicationController
 
   # GET /proyectos/1/edit
   def edit
+    @proyecto = Proyecto.find(params[:id])
   end
 
   # POST /proyectos or /proyectos.json
