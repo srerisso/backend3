@@ -5,10 +5,11 @@
     <% end %>
 
   <%# Table %>
+  <h1 class="text-xl"> Proyecto <%= @proyecto.Codigo_Alg %>
   <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
     <thead class="bg-gray-50">
       <tr>
-        <th scope="col" class="px-6 py-4 font-medium text-gray-900">ALG</th>
+        <th scope="col" class="px-6 py-4 font-medium text-gray-900">Código ALG</th>
         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Referencia</th>
         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Cliente</th>
         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Fecha Alta</th>
@@ -18,17 +19,20 @@
       <%= render @proyecto %>
   </table>
 
-    <%= link_to 'Edit this proyecto', edit_proyecto_path(@proyecto), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this proyecto', edit_proyecto_path(@proyecto), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block" %>
     <div class="inline-block ml-2">
-      <%= button_to 'Destroy this proyecto', proyecto_path(@proyecto), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to 'Destroy this proyecto', proyecto_path(@proyecto), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100" %>
     </div>
-    <%= link_to 'Back to proyectos', proyectos_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Back to proyectos', proyectos_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block" %>
     
     <br />
     <hr class="py-4">
 
-    <h1 class="py-4 font-medium text-gray-900">Cálculos</h1>
-    <%= render @proyecto.calculos %>
+    <% if @proyecto.calculos.exists? %>
+      <h1 class="text-xl py-4 font-medium text-gray-900 font-medium"><%= print 'Calculos' %></h1>
+      <%= render @proyecto.calculos %>
+
+      <% end %>
 
   </div>
 </div>
