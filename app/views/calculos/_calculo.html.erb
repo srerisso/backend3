@@ -10,66 +10,32 @@
   </thead>
   <tbody>
     <tr class="border-b dark:border-neutral-500">
-      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">1 </td>
-      <td class="whitespace-nowrap px-6 py-4">@mdo</td>
+      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Acabado </td>
+      <td class="whitespace-nowrap px-6 py-4"><%= calculo.acabado %></td>
     </tr>
     <tr class="border-b dark:border-neutral-500">
-      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">2</td>
-      <td class="whitespace-nowrap px-6 py-4">@fat</td>
+      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Descuento</td>
+      <td class="whitespace-nowrap px-6 py-4"><%= calculo.descuento %></td>
     </tr>
     <tr class="border-b dark:border-neutral-500">
-      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">3</td>
-      <td class="whitespace-nowrap px-6 py-4">@twitter</td>
+      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Total perfiles</td>
+      <td class="whitespace-nowrap px-6 py-4"><%= calculo.importe_perfiles %></td>
+    </tr>
+    <tr class="border-b dark:border-neutral-500">
+      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Total Accesorios</td>
+      <td class="whitespace-nowrap px-6 py-4"><%= calculo.importe_accesorios %></td>
+    </tr>
+    <tr class="border-b dark:border-neutral-500">
+      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Total Neto</td>
+      <td class="whitespace-nowrap px-6 py-4"><%= calculo.importe_total_neto %></td>
+    </tr>
+    <tr class="border-b dark:border-neutral-500">
+      <td class="whitespace-nowrap border-r px-6 py-4 font-medium dark:border-neutral-500">Observaciones</td>
+      <td class="whitespace-nowrap px-6 py-4"><%= calculo.observaciones %></td>
     </tr>
   </tbody>
 </table>
-
 <%# /TABLE %>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Proyecto:</strong>
-    <%= calculo.proyecto_id %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Acabado:</strong>
-    <%= calculo.acabado %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Descuento:</strong>
-    <%= calculo.descuento %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Importe perfiles:</strong>
-    <%= calculo.importe_perfiles %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Importe accesorios:</strong>
-    <%= calculo.importe_accesorios %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Importe total neto:</strong>
-    <%= calculo.importe_total_neto %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Observaciones:</strong>
-    <%= calculo.observaciones %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Fecha calculo:</strong>
-    <%= calculo.fecha_calculo %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Carpinteria:</strong>
-    <%= calculo.carpinteria %>
-  </p>
 
   <% if action_name != "show" %>
     <%= link_to "Show this calculo", calculo, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

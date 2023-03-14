@@ -9,7 +9,14 @@
   </div>
 
   <div id="calculos" class="min-w-full">
-    <%= render @calculos %>
+    <%# <%= render @calculos %> %>
+    <% @calculos.each do |cal| %>
+    <table>
+      <ul>
+        <li><%= cal.id %></li>
+      </ul>
+    </table>
+    <% end %>
   </div>
 
   <%= paginate @calculos %>
