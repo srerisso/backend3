@@ -4,7 +4,25 @@
     <td class="px-6 py-4"><%= proyecto.Referencia %></td>
     <td class="px-6 py-4"><%= proyecto.cliente.Nombre %></td>
     <td class="px-6 py-4"><%= proyecto.published_at.strftime("%d/%m/%Y") %></td>
-    <td class="px-6 py-4"><%= proyecto.Estado %></td>
+
+    <%# Estado is a list when creating a new Proyecto %>
+    <% if action_name == "create" %>
+      <td>
+        <select name="" id="">
+          <option value="IN">IN</option>
+          <option value="OK">OK</option>
+          <option value="KO">KO</option>
+          <option value="PEDIDO">PEDIDO</option>
+          <option value="CALCULO">EN_CÁLCULO</option>
+          <option value="ENVIAR">ENVIAR</option>
+          <option value="REVISAR">REVISAR</option>
+        </select>
+      </td>
+    <%# Or the value itself when editing a Proyecto %>
+    <% else %>
+      <td class="px-6 py-4 <%= proyecto.Estado %>"><%= proyecto.Estado %></td>
+    <% end %>
+    
 
     <td>
         <% if action_name != "show" %>
