@@ -23,7 +23,7 @@
 
   <div class="my-5">
     <%= form.label :cliente_id %>
-    <%= form.select :cliente_id, Cliente.all.collect { |c| [c.Nombre, c.id] }, include_blank: true , class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.select :cliente_id, Cliente.order('"Nombre" ASC').collect { |c| [c.Nombre, c.id] }, include_blank: true , class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
