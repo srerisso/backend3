@@ -3,7 +3,7 @@
     <td class="px-6 py-4"><%= proyecto.Codigo_Alg %></td>
     <td class="px-6 py-4"><%= proyecto.Referencia %></td>
     <td class="px-6 py-4"><%= proyecto.cliente.Nombre %></td>
-    <td class="px-6 py-4"><%= proyecto.published_at.strftime("%d/%m/%Y") %></td>
+    <td class="px-6 py-4"><%= proyecto.created_at.strftime("%d/%m/%Y") %></td>
 
     <%# Estado is a list when creating a new Proyecto %>
     <% if action_name == "create" %>

@@ -4,7 +4,7 @@
 <table class="min-w-full border text-center text-sm font-light dark:border-neutral-500" id="<%= calculo.id %>">
   <thead class="border-b font-medium dark:border-neutral-500">
     <tr>
-      <th scope="col" class="px-6 py-4"><%= calculo.fecha_calculo | 'No hay fecha' %></th>
+      <th scope="col" class="px-6 py-4"><%= calculo.fecha_calculo %></th>
       <th scope="col" class="border-r px-6 py-4 dark:border-neutral-500"><%= calculo.id %></th>
     </tr>
   </thead>
@@ -37,9 +37,9 @@
 </table>
 <%# /TABLE %>
 
-  <% if action_name != "show" %>
+  <%# <% if action_name != "show" %> %>
     <%= link_to "Show this calculo", calculo, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to 'Edit this calculo', edit_calculo_path(calculo), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
-  <% end %>
+  <%# <% end %> %>
 </div>
