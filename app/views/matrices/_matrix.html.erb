@@ -1,0 +1,72 @@
+<div id="<%= dom_id matrix %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Nombre:</strong>
+    <%= matrix.nombre %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Numserie:</strong>
+    <%= matrix.numserie %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Uso:</strong>
+    <%= matrix.uso %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Marca:</strong>
+    <%= matrix.marca %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Published at:</strong>
+    <%= matrix.published_at %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Created by:</strong>
+    <%= matrix.created_by %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Updated by:</strong>
+    <%= matrix.updated_by %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Tag:</strong>
+    <%= matrix.Tag %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Tag:</strong>
+    <%= matrix.tag %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Descripcion:</strong>
+    <%= matrix.descripcion %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Encasa:</strong>
+    <%= matrix.encasa %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Fechaalta:</strong>
+    <%= matrix.FechaAlta %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Carpinteria:</strong>
+    <%= matrix.Carpinteria %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this matrix", matrix, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this matrix', edit_matrix_path(matrix), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

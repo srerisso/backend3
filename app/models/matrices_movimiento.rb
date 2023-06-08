@@ -1,0 +1,2 @@
+class MatricesMovimiento < ApplicationRecord
+end

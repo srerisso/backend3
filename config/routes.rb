@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :matrices_movimientos
+  resources :matrices
   # resources :proyectos
   # resources :clientes
   # resources :calculos
